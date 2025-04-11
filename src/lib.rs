@@ -344,17 +344,17 @@
 )]
 #![cfg_attr(all(test, exhaustive), feature(non_exhaustive_omitted_patterns_lint))]
 
-mod algorithm;
+pub mod algorithm;
 mod attr;
 mod classify;
 mod convenience;
 mod data;
-mod expr;
+pub mod expr;
 mod file;
-mod fixup;
+pub mod fixup;
 mod generics;
 mod item;
-mod iter;
+pub mod iter;
 mod lifetime;
 mod lit;
 mod mac;
@@ -362,7 +362,7 @@ mod pat;
 mod path;
 mod precedence;
 mod ring;
-mod stmt;
+pub mod stmt;
 mod token;
 mod ty;
 
@@ -373,7 +373,7 @@ use syn::File;
 const MARGIN: isize = 89;
 
 // Number of spaces increment at each level of block indentation.
-const INDENT: isize = 4;
+pub const INDENT: isize = 4;
 
 // Every line is allowed at least this much space, even if highly indented.
 const MIN_SPACE: isize = 60;

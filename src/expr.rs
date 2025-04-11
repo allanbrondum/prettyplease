@@ -1046,7 +1046,7 @@ impl Printer {
         }
     }
 
-    fn label(&mut self, label: &Label) {
+    pub fn label(&mut self, label: &Label) {
         self.lifetime(&label.name);
         self.word(": ");
     }
@@ -1382,7 +1382,7 @@ pub fn simple_block(expr: &Expr) -> Option<&ExprBlock> {
 //
 // This is not the case for all expressions. For example `{} | x | x` has some
 // bitwise OR operators while `{ {} |x| x }` has a block followed by a closure.
-fn parseable_as_stmt(mut expr: &Expr) -> bool {
+pub fn parseable_as_stmt(mut expr: &Expr) -> bool {
     loop {
         match expr {
             #![cfg_attr(all(test, exhaustive), deny(non_exhaustive_omitted_patterns))]
